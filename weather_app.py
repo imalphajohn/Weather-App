@@ -10,8 +10,11 @@ model = load_model('model.h5')
 def main():
     st.title("Indian Rainfall Prediction")
 
+    # List of years for dropdown menu
+    years = list(range(1901, 2016))  # Adjust as needed
+
     # Input fields for user inputs
-    year = st.number_input("Year", min_value=1901, max_value=2015)
+    year = st.selectbox("Year", years)
     month = st.selectbox("Month", ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"])
 
     # Mapping months to integers
